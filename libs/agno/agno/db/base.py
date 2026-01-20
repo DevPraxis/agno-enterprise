@@ -51,8 +51,10 @@ class BaseDb(ABC):
         schedule_runs_table: Optional[str] = None,
         approvals_table: Optional[str] = None,
         id: Optional[str] = None,
+        tenant_id: Optional[str] = None,
     ):
         self.id = id or str(uuid4())
+        self.tenant_id = tenant_id
         self.session_table_name = session_table or "agno_sessions"
         self.culture_table_name = culture_table or "agno_culture"
         self.memory_table_name = memory_table or "agno_memories"
@@ -1096,8 +1098,10 @@ class AsyncBaseDb(ABC):
         schedules_table: Optional[str] = None,
         schedule_runs_table: Optional[str] = None,
         approvals_table: Optional[str] = None,
+        tenant_id: Optional[str] = None,
     ):
         self.id = id or str(uuid4())
+        self.tenant_id = tenant_id
         self.session_table_name = session_table or "agno_sessions"
         self.memory_table_name = memory_table or "agno_memories"
         self.metrics_table_name = metrics_table or "agno_metrics"

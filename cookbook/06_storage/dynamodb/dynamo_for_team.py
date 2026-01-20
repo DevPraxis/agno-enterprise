@@ -23,6 +23,7 @@ from pydantic import BaseModel
 # ---------------------------------------------------------------------------
 # Setup
 # ---------------------------------------------------------------------------
+# For multi-tenant deployments, specify tenant_id: DynamoDb(tenant_id="my-tenant")
 db = DynamoDb()
 
 
